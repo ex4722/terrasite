@@ -157,7 +157,6 @@ class Get_local_functions(GenericCommand):
     _cmdline_ = "glf"
     _syntax_  = f"{_cmdline_}"
 
-    @only_if_gdb_running         # not required, ensures that the debug session is started
     def do_invoke(self, argv):
 
         function_symbols = [ LocalFunction(bv.symbols[x]) for x in bv.symbols if bv.symbols[x][0].type == 0]
